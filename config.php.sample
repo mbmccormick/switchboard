@@ -1,0 +1,8 @@
+<?php
+
+    $config_server = "yourserver.com";
+    $config_username = "youruser";
+    $config_password = "yourpassword";
+    $config_database = "yourdatabase";
+    
+?>

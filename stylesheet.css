@@ -1,0 +1,112 @@
+body
+{
+    background-color: #f7f7f7;
+    font-family: Helvetica, Arial;
+    padding: 30px;
+    color: #111111;
+}
+
+a
+{
+    color: #36A4FF;
+}
+
+table
+{
+    width: 100%;
+}
+
+table tr th
+{
+    font-size: 12px;
+    border-bottom: solid 1px #efefef;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+table tr td
+{
+    font-size: 14px;
+    border-bottom: dotted 1px #efefef;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+table.blank tr td
+{
+    border-bottom: none;
+}
+
+.main
+{
+    margin: 0px auto;
+    background-color: #ffffff;
+    border: solid 1px #e4e4e4;
+    padding: 20px;
+    width: 950px;
+}
+
+.header
+{
+    color: #6AD141;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header p
+{
+    color: #a6a6a6;
+    font-size: 14px;
+    font-style: italic;
+    padding: 1px 0px 0px 0px;
+    margin: 0px;
+}
+
+.footer
+{
+    font-size: 12px;
+}
+
+.navigation
+{
+    font-size: 14px;
+}
+
+.navigation ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.navigation ul li
+{
+    display: inline;
+    padding-left: 5px;
+}
+
+.content
+{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.section
+{
+    padding-bottom: 30px;
+    font-size: 14px;
+}
+
+.section-header
+{
+    font-weight: bold;
+    padding-bottom: 3px;
+    border-bottom: solid 1px #efefef;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
