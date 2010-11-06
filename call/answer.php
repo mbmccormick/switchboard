@@ -11,7 +11,7 @@
     mysql_select_db($config_database, $con);
     
     // lookup the number to see if this is an agent
-    $result1 = mysql_query("SELECT * FROM Agents WHERE Id = '1'");
+    $result1 = mysql_query("SELECT * FROM Agents WHERE PhoneNumber = '$_POST[From]'");
     
     $row = mysql_fetch_array($result1);
     
@@ -19,16 +19,16 @@
     {
         echo "<?xml version='1.0' encoding='UTF-8' ?>\n";
         echo "<Response>\n";
-        echo "<Say voice=\"man\" loop=\"1\">Hello, $row[Name]! Welcome to Switchboard, you have reached McCormick Technologies.</Say>\n";        
+        echo "<Say voice='man' loop='1'>Hello, $row[Name]! Welcome to Switchboard, you have reached McCormick Technologies.</Say>\n";        
         if ($row[Status] == '0')
         {
-            echo "<Gather action=\"agent.php?id=$row[Id]&amp;status=2;\" method=\"POST\" numDigits=\"1\">\n";
-            echo "<Say voice=\"man\" loop=\"1\">Your status is currently set as Available. To change this to Do Not Disturb, press one.</Say>\n";
+            echo "<Gather action='agent.php?id=$row[Id]&amp;status=2;' method='POST' numDigits='1'>\n";
+            echo "<Say voice='man' loop='1'>Your status is currently set as Available. To change this to Do Not Disturb, press one.</Say>\n";
         }
         else
         {
-            echo "<Gather action=\"agent.php?id=$row[Id]&amp;status=0;\" method=\"POST\" numDigits=\"1\">\n";
-            echo "<Say voice=\"man\" loop=\"1\">Your status is currently set as Do Not Disturb. To change this to Available, press one.</Say>\n";
+            echo "<Gather action='agent.php?id=$row[Id]&amp;status=0;' method='POST' numDigits='1'>\n";
+            echo "<Say voice='man' loop='1'>Your status is currently set as Do Not Disturb. To change this to Available, press one.</Say>\n";
         }
         echo "</Gather>\n";
         echo "</Response>\n";
@@ -57,8 +57,8 @@
         
         echo "<?xml version='1.0' encoding='UTF-8' ?>\n";
         echo "<Response>\n";
-        echo "<Say voice=\"man\" loop=\"1\">Please wait while you are connected to an agent. This call may be monitored for quality assurance purposes.</Say>\n";
-        echo "<Dial callerId=\"877-836-6090\" action=\"complete.php?AgentId=$row[Id]\" record=\"true\">\n";    
+        echo "<Say voice='man' loop='1'>Please wait while you are connected to an agent. This call may be monitored for quality assurance purposes.</Say>\n";
+        echo "<Dial callerId='877-836-6090' action='complete.php?AgentId=$row[Id]' record='true'>\n";    
         echo "<Number>\n";
         echo "$row[PhoneNumber]\n";
         echo "</Number>\n";
